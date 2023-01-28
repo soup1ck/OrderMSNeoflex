@@ -1,5 +1,6 @@
 package ru.neoflex.conveyor.data.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,17 +9,9 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Builder
 @ToString
 public class LoanOfferDTO {
-
-    public LoanOfferDTO(LoanApplicationRequestDTO loanApplicationRequestDTO,
-                        Boolean isInsuranceEnabled,
-                        Boolean isSalaryClient) {
-        requestedAmount = loanApplicationRequestDTO.getAmount();
-        term = loanApplicationRequestDTO.getTerm();
-        this.isInsuranceEnabled = isInsuranceEnabled;
-        this.isSalaryClient = isSalaryClient;
-    }
 
     private Long applicationId;
     private BigDecimal requestedAmount;

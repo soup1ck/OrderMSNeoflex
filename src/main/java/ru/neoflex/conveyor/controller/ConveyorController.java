@@ -9,6 +9,7 @@ import ru.neoflex.conveyor.data.dto.CreditDTO;
 import ru.neoflex.conveyor.data.dto.LoanApplicationRequestDTO;
 import ru.neoflex.conveyor.data.dto.LoanOfferDTO;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
+import ru.neoflex.conveyor.service.OrderService;
 
 import java.util.List;
 
@@ -17,9 +18,11 @@ import java.util.List;
 @RequestMapping(value = "/conveyor")
 public class ConveyorController {
 
+    private final OrderService orderService;
+
     @PostMapping(value = "/offers")
     public List<LoanOfferDTO> getOffers(@RequestBody LoanApplicationRequestDTO loanApplicationRequestDTO) {
-        return null;
+        return orderService.getOffers(loanApplicationRequestDTO);
     }
 
     @PostMapping(value = "/calculation")
