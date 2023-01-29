@@ -1,9 +1,11 @@
-package ru.neoflex.conveyor.service;
+package ru.neoflex.conveyor.service.order;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.LoanApplicationRequestDTO;
 import ru.neoflex.conveyor.data.dto.LoanOfferDTO;
+import ru.neoflex.conveyor.service.payment.PaymentService;
+import ru.neoflex.conveyor.service.scoring.ScoringService;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.List;
 public class OrderService {
 
     private final ScoringService scoringService;
+    private final PaymentService paymentService;
 
     public List<LoanOfferDTO> getOffers(LoanApplicationRequestDTO request) {
         List<LoanOfferDTO> loanOfferDTOs = new ArrayList<>();
@@ -28,19 +31,19 @@ public class OrderService {
     private LoanOfferDTO createOffer(LoanApplicationRequestDTO request,
                                      Boolean isInsuranceEnabled,
                                      Boolean isSalaryClient) {
-
-        BigDecimal rate = scoringService.calculateRate(isInsuranceEnabled, isSalaryClient);
-        BigDecimal totalAmount = scoringService.calculateTotalAmount(request.getAmount(),
+        Integer term = request.getTerm();
+        BigDecimal requestedAmount = request.getAmount();
+        BigDecimal calculatedRate = scoringService.calculateRate(isInsuranceEnabled, isSalaryClient);
+        BigDecimal totalAmount = scoringService.calculateTotalAmount(requestedAmount,
                 isInsuranceEnabled, isSalaryClient);
-        BigDecimal monthlyPayment = scoringService.calculateMonthlyPayment(totalAmount, rate,
-                request.getTerm());
+        BigDecimal monthlyPayment = paymentService.calculateMonthlyPayment(totalAmount,calculatedRate,term);
 
         return LoanOfferDTO.builder()
-                .requestedAmount(request.getAmount())
+                .requestedAmount(requestedAmount)
                 .totalAmount(totalAmount)
-                .term(request.getTerm())
+                .term(term)
                 .monthlyPayment(monthlyPayment)
-                .rate(rate)
+                .rate(calculatedRate)
                 .isInsuranceEnabled(isInsuranceEnabled)
                 .isSalaryClient(isSalaryClient)
                 .build();
