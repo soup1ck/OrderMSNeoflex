@@ -3,7 +3,6 @@ package ru.neoflex.conveyor.service.scoring;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.neoflex.conveyor.service.payment.PaymentService;
 
 import java.math.BigDecimal;
 

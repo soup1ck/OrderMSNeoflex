@@ -1,9 +1,8 @@
-package ru.neoflex.conveyor.utils.validator.birthdate;
+package ru.neoflex.conveyor.validator.birthdate;
 
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import ru.neoflex.conveyor.utils.validator.birthdate.BirthDay;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

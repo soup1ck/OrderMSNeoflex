@@ -5,7 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ru.neoflex.conveyor.utils.validator.birthdate.BirthDay;
+import ru.neoflex.conveyor.validator.birthdate.BirthDay;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

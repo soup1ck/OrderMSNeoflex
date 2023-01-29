@@ -1,11 +1,11 @@
-package ru.neoflex.conveyor.utils.ratecalculator;
+package ru.neoflex.conveyor.service.ratecalculator;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
 import ru.neoflex.conveyor.data.enums.Gender;
 import ru.neoflex.conveyor.exception.RefusalException;
-import ru.neoflex.conveyor.utils.validator.scoring.AgeValidator;
+import ru.neoflex.conveyor.validator.scoring.AgeValidator;
 
 import java.util.Map;
 import java.util.Optional;

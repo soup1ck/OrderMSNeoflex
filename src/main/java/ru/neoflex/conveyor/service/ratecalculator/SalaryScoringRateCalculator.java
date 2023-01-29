@@ -1,10 +1,10 @@
-package ru.neoflex.conveyor.utils.ratecalculator;
+package ru.neoflex.conveyor.service.ratecalculator;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
 import ru.neoflex.conveyor.exception.RefusalException;
-import ru.neoflex.conveyor.utils.validator.scoring.SalaryValidator;
+import ru.neoflex.conveyor.validator.scoring.SalaryValidator;
 
 import java.math.BigDecimal;
 

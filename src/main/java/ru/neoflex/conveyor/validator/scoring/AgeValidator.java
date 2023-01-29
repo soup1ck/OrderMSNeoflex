@@ -1,4 +1,4 @@
-package ru.neoflex.conveyor.utils.validator.scoring;
+package ru.neoflex.conveyor.validator.scoring;
 
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;

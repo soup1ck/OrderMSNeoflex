@@ -1,4 +1,4 @@
-package ru.neoflex.conveyor.utils.validator.birthdate;
+package ru.neoflex.conveyor.validator.birthdate;
 
 
 import jakarta.validation.Constraint;

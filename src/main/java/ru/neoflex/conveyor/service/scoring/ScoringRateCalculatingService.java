@@ -3,7 +3,7 @@ package ru.neoflex.conveyor.service.scoring;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
-import ru.neoflex.conveyor.utils.ratecalculator.ScoringRateCalculator;
+import ru.neoflex.conveyor.service.ratecalculator.ScoringRateCalculator;
 
 import java.math.BigDecimal;
 import java.util.List;

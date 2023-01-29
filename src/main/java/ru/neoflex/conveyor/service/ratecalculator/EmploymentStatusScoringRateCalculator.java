@@ -1,4 +1,4 @@
-package ru.neoflex.conveyor.utils.ratecalculator;
+package ru.neoflex.conveyor.service.ratecalculator;
 
 import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
