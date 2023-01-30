@@ -21,6 +21,7 @@ public class OrderService {
     private final PaymentService paymentService;
 
     public List<LoanOfferDTO> getOffers(LoanApplicationRequestDTO request) {
+        log.info("Прескоринг пройден");
         log.info("Идет процесс формирования предложений");
         log.info("Запрашиваемый кредит: {}", request);
         List<LoanOfferDTO> loanOfferDTOs = new ArrayList<>();
