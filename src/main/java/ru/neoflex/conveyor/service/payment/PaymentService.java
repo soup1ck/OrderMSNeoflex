@@ -24,7 +24,7 @@ public class PaymentService {
         for (int i = 1; i <= term; i++) {
             BigDecimal interestPayment = calculateInterestPayment(rate, amount, startDate);
             BigDecimal debtPayment = monthlyPayment.subtract(interestPayment);
-            amount = amount.subtract(debtPayment);
+            amount = amount.subtract(monthlyPayment);
             PaymentScheduleElement paymentScheduleElement = PaymentScheduleElement.builder()
                     .number(i)
                     .date(startDate)

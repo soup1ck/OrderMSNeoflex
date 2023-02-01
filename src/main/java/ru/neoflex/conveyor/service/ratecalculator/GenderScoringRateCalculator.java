@@ -15,7 +15,6 @@ import java.util.Optional;
 public class GenderScoringRateCalculator implements ScoringRateCalculator {
 
     private final AgeValidator ageValidator;
-    private final AgeScoringRateCalculator ageRateCalculator;
 
     private final Map<Gender, Integer> mapOfGender = Map.of(
             Gender.MALE, -3,
@@ -25,7 +24,6 @@ public class GenderScoringRateCalculator implements ScoringRateCalculator {
 
     @Override
     public Integer calculateRate(ScoringDataDTO scoringDataDTO) {
-        ageRateCalculator.calculateRate(scoringDataDTO);
         Gender gender = scoringDataDTO.getGender();
         if (ageValidator.validate(scoringDataDTO)) {
             return Optional.ofNullable(mapOfGender.get(gender))

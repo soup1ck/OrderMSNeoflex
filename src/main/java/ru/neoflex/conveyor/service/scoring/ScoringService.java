@@ -12,6 +12,7 @@ public class ScoringService {
 
     @Value("${BASE_RATE}")
     private BigDecimal baseRate;
+
     private static final BigDecimal BIG_DECIMAL_0_5 = new BigDecimal("0.5");
     private static final BigDecimal BIG_DECIMAL_0_25 = new BigDecimal("0.25");
     private static final BigDecimal BIG_DECIMAL_5000 = new BigDecimal("5000");
