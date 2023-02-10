@@ -43,8 +43,7 @@ public class PaymentService {
         BigDecimal monthlyRate = rate.divide(BIG_DECIMAL_1200, 10, RoundingMode.FLOOR);
         BigDecimal onePlusMonthlyRatePowTerm = (BigDecimal.ONE.add(monthlyRate)).pow(term);
         BigDecimal monthlyPayment = totalAmount
-                .multiply((monthlyRate.multiply(
-                        onePlusMonthlyRatePowTerm))
+                .multiply((monthlyRate.multiply(onePlusMonthlyRatePowTerm))
                         .divide
                                 (onePlusMonthlyRatePowTerm
                                                 .subtract(BigDecimal.ONE),

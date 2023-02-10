@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.CreditDTO;
 import ru.neoflex.conveyor.data.dto.PaymentScheduleElement;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
-import ru.neoflex.conveyor.exception.RefusalException;
 import ru.neoflex.conveyor.service.payment.PaymentService;
 import ru.neoflex.conveyor.service.scoring.ScoringRateCalculatingService;
 

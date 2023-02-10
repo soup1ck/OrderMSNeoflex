@@ -13,12 +13,12 @@ import ru.neoflex.conveyor.exception.RefusalException;
 public class CustomExceptionHandler {
 
     @ExceptionHandler(RefusalException.class)
-    public ResponseEntity<Object> handleBadRequestEx(RefusalException ex){
-        return new ResponseEntity<>(ex.getMessage(),ex.getHttpStatus());
+    public ResponseEntity<Object> handleBadRequestEx(RefusalException ex) {
+        return new ResponseEntity<>(ex.getMessage(), ex.getHttpStatus());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Object> handleBadRequestEx(MethodArgumentNotValidException ex){
+    public ResponseEntity<Object> handleBadRequestEx(MethodArgumentNotValidException ex) {
         log.info("Прескоринг не пройден");
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }

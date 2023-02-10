@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.neoflex.conveyor.data.dto.ScoringDataDTO;
 
 @Service
-public class WorkExperienceValidator implements ValidateCommand{
+public class WorkExperienceValidator implements ValidateCommand {
 
     @Override
     public Boolean validate(ScoringDataDTO scoringDataDTO) {

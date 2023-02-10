@@ -43,7 +43,7 @@ public class OrderService {
         BigDecimal calculatedRate = scoringService.calculateRate(isInsuranceEnabled, isSalaryClient);
         BigDecimal totalAmount = scoringService.calculateTotalAmount(requestedAmount,
                 isInsuranceEnabled, isSalaryClient);
-        BigDecimal monthlyPayment = paymentService.calculateMonthlyPayment(totalAmount,calculatedRate,term);
+        BigDecimal monthlyPayment = paymentService.calculateMonthlyPayment(totalAmount, calculatedRate, term);
 
         return LoanOfferDTO.builder()
                 .requestedAmount(requestedAmount)
