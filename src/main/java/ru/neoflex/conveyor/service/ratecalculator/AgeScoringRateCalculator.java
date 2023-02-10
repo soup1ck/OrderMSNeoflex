@@ -10,7 +10,7 @@ import java.time.temporal.ChronoUnit;
 @Service
 public class AgeScoringRateCalculator implements ScoringRateCalculator {
 
-    public Integer calculateRate(ScoringDataDTO scoringDataDTO){
+    public Integer calculateRate(ScoringDataDTO scoringDataDTO) {
         Long age = ChronoUnit.YEARS.between(scoringDataDTO.getBirthDate(), LocalDate.now());
         if (age > 20 && age < 60) {
             return 0;
